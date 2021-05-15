@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3b161550787d18102a831d58304c3ad8c1ae87281c55e2c00986bb4668a736c4"
+            "sha256": "651c1e0ac6007f277452b799a659d894ce640c465d5aaf2b475c0bd5fe46c27b"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,11 +26,11 @@
         },
         "azure-cognitiveservices-knowledge-qnamaker": {
             "hashes": [
-                "sha256:9a5e5a9e657a5c7442d70588806e435e91f08d0c2d9d1fbb2b8027dc427f899e",
-                "sha256:dc9b01a8ae00b9e08e2f016382f345e08e6cff86e1a71e1a0d76f79f56bd1027"
+                "sha256:89c0102a4efc56d0d241fad0e804a831e6ff2fa32423371f1481231adcb2c0b8",
+                "sha256:d06e1b923128febc04733f9f8cb966b6215d2070a17d87662ed35e32adf9edf0"
             ],
             "index": "pypi",
-            "version": "==0.3.0"
+            "version": "==0.2.0"
         },
         "azure-common": {
             "hashes": [
