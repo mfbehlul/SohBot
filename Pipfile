@@ -13,6 +13,7 @@ django = "===3.2.3"
 gunicorn = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
+azure-cognitiveservices-knowledge-qnamaker = "*"
 
 [dev-packages]
 
