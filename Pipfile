@@ -14,6 +14,11 @@ gunicorn = "*"
 dj-database-url = "*"
 psycopg2-binary = "*"
 azure-cognitiveservices-knowledge-qnamaker = "==0.2.0"
+nltk = "*"
+newspaper3k = "*"
+numpy = "*"
+sklearn = "*"
+beautifulsoup4 = "*"
 
 [dev-packages]
 
