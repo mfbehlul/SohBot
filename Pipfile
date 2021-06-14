@@ -19,8 +19,12 @@ newspaper3k = "*"
 numpy = "*"
 sklearn = "*"
 beautifulsoup4 = "*"
+chatterbot-corpus = "*"
+turkishstemmer = "*"
+whitenoise = "*"
 
 [dev-packages]
+autopep8 = "*"
 
 [requires]
 python_version = "3.8"

@@ -41,5 +41,5 @@ def get_text():
 
     print(text)
 
-get_text()
+#get_text()
 #article()
