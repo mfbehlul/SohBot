@@ -1,4 +1,4 @@
-from .models import QnADataSet, greetingsDataSet
+from .models import QnADataSet, greetingsDataSet, dailyConversationDataSet
 import sys
 from pathlib import Path
 from nltk.chat.util import Chat, reflections
@@ -24,11 +24,31 @@ def greetings(user_input):
 
     inputs = ast.literal_eval(inputs)
     responses = ast.literal_eval(responses)
+    #print(inputs)
+    #print(responses)
     for input in user_input.split():
         if input in inputs:
             return random.choice(responses)
 
 
+
+def daily_conversation(user_input):
+    all_dc=dailyConversationDataSet.objects.all()
+    for dc in all_dc:
+        if (dc.inputs=="daily_conversation_list"):
+            responses=dc.responses
+    
+    responses = ast.literal_eval(responses)
+    for response in responses:
+        question=response["question"]
+
+        for q in question:
+            if (q.lower()==user_input):
+                bot_response=random.choice(response["answer"])
+                return bot_response
+    return None
+
+           
 # def old_qna_dataset(user_input):
 
 #     data_list=get_dataset_and_list_it()
@@ -75,11 +95,11 @@ def qna_dataset(user_input):
     flat = vals.flatten()
     flat.sort()
     req_tfidf = flat[-2]
-    print("tfidf",tfidf)
-    print("vals",vals)
-    print("idx",idx)
-    print("flat",flat)
-    print("req_tfidf",req_tfidf)
+    # print("tfidf",tfidf)
+    # print("vals",vals)
+    # print("idx",idx)
+    # print("flat",flat)
+    # print("req_tfidf",req_tfidf)
 
     if(req_tfidf==0):
         bot_response=None
@@ -112,8 +132,6 @@ def get_stem(user_input):
     return stemmed_user_input
 
 
-def daily_conversation(user_input):
-    return None
 
 
 def control_function(user_input):
@@ -129,7 +147,7 @@ def control_function(user_input):
 
     return bot_response
 
-    return None
+    
 def start_chat(user_input):
     #user message characters are transformed lowercase
     user_input = user_input.lower()
