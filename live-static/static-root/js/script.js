@@ -61,7 +61,7 @@ function action_trigger() {
         contentType: "application/json",
         data: JSON.stringify({ "name": action_name, "policy": "MappingPolicy", "confidence": "0.98" }),
         success: function(botResponse, status) {
-            console.log("Response from Rasa: ", botResponse, "\nStatus: ", status);
+            console.log("Response from SohBot: ", botResponse, "\nStatus: ", status);
 
             if (botResponse.hasOwnProperty("messages")) {
                 setBotResponse(botResponse.messages);
@@ -70,7 +70,7 @@ function action_trigger() {
         },
         error: function(xhr, textStatus, errorThrown) {
 
-            // if there is no response from rasa server
+            // if there is no response from SohBot server
             setBotResponse("");
             console.log("Error from bot end: ", textStatus);
             $("#userInput").prop('disabled', false);
@@ -151,7 +151,7 @@ function scrollToBottomOfResults() {
     terminalResultsDiv.scrollTop = terminalResultsDiv.scrollHeight;
 }
 
-//============== send the user message to rasa server =============================================
+//============== send the user message to SohBot server =============================================
 function send(message) {
     $.ajax({
         url: "http://127.0.0.1:8000/start-chat/",
@@ -186,7 +186,7 @@ function send(message) {
                 return;
             }
 
-            // if there is no response from rasa server
+            // if there is no response from SohBot server
             setBotResponse("");
             console.log("Error from bot end: ", textStatus);
 
@@ -198,7 +198,7 @@ function send(message) {
     //     contentType: "application/json",
     //     data: JSON.stringify({ message: message, sender: user_id }),
     //     success: function(botResponse, status) {
-    //         console.log("Response from Rasa: ", botResponse, "\nStatus: ", status);
+    //         console.log("Response from SohBot: ", botResponse, "\nStatus: ", status);
 
     //         // if user wants to restart the chat and clear the existing chat contents
     //         if (message.toLowerCase() == '/restart') {
@@ -223,7 +223,7 @@ function send(message) {
     //             return;
     //         }
 
-    //         // if there is no response from rasa server
+    //         // if there is no response from SohBot server
     //         setBotResponse("");
     //         console.log("Error from bot end: ", textStatus);
     //         console.log("Error from bot end: ", xhr);
@@ -239,7 +239,7 @@ function setBotResponse(response) {
     setTimeout(function() {
         hideBotTyping();
         if (response.length < 1) {
-            //if there is no response from Rasa, send  fallback message to the user
+            //if there is no response from SohBot, send  fallback message to the user
             var fallbackMsg = "Ne demek istediğinizi anlayamadım. Lütfen sorunuzu daha açık olarak yazabilir misiniz ?";
 
             var BotResponse = '<img class="botAvatar" src="./static/img/sara_avatar.png"/><p class="botMsg">' + fallbackMsg + '</p><div class="clearfix"></div>';
@@ -248,7 +248,7 @@ function setBotResponse(response) {
             scrollToBottomOfResults();
         } else {
 
-            //if we get response from Rasa
+            //if we get response from SohBot
             for (i = 0; i < response.length; i++) {
 
                 //check if the response contains "text"
@@ -422,7 +422,7 @@ function addSuggestion(textToAdd) {
     }, 1000);
 }
 
-// on click of suggestions, get the value and send to rasa
+// on click of suggestions, get the value and send to SohBot
 $(document).on("click", ".menu .menuChips", function() {
     var text = this.innerText;
     var payload = this.getAttribute('data-payload');
@@ -557,7 +557,7 @@ function showQuickReplies(quickRepliesData) {
 
 }
 
-// on click of quickreplies, get the value and send to rasa
+// on click of quickreplies, get the value and send to SohBot
 $(document).on("click", ".quickReplies .chip", function() {
     var text = this.innerText;
     var payload = this.getAttribute('data-payload');
@@ -714,7 +714,7 @@ function createChart(title, labels, backgroundColor, chartsData, chartType, disp
 // on click of expand button, get the chart data from gloabl variable & render it to modal
 $(document).on("click", "#expand", function() {
 
-    //the parameters are declared gloabally while we get the charts data from rasa.
+    //the parameters are declared gloabally while we get the charts data from SohBot.
     createChartinModal(title, labels, backgroundColor, chartsData, chartType, displayLegend)
 });
 
