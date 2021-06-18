@@ -240,7 +240,7 @@ function setBotResponse(response) {
         hideBotTyping();
         if (response.length < 1) {
             //if there is no response from SohBot, send  fallback message to the user
-            var fallbackMsg = "Ne demek istediğinizi anlayamadım. Lütfen sorunuzu daha açık olarak yazabilir misiniz ?";
+            var fallbackMsg = "Ne demek istediğinizi anlayamadım. Lütfen sorunuzu daha açık bir şekilde yazabilir misiniz ?";
 
             var BotResponse = '<img class="botAvatar" src="./static/img/sara_avatar.png"/><p class="botMsg">' + fallbackMsg + '</p><div class="clearfix"></div>';
 

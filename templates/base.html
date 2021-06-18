@@ -44,10 +44,10 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
   
       <!--Import materialize.css-->
-      <link rel="stylesheet" type="text/css" href="static/css/materialize.min.css">
+      <link href="{% static 'css/materialize.min.css' %}" rel="stylesheet">
   
       <!--Main css-->
-      <link rel="stylesheet" type="text/css" href="static/css/style.css">
+      <link href="{% static 'css/style.css' %}" rel="stylesheet" >
       <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
 
@@ -85,83 +85,33 @@
         <hr class="sidebar-divider" />
 
         <!-- Heading -->
-        <div class="sidebar-heading">Queries</div>
+        <div class="sidebar-heading"></div>
 
-        <!-- Nav Item - New Query -->
+        <!-- Nav Item - About Sohbot -->
         <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-search"></i>
-            <span>New Query</span></a
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#aboutModal"> 
+            <i class="fas fa-question"></i>
+            <span>SohBot Hakkında</span></a
           >
         </li>
 
         <!-- Nav Item - Saved Query -->
         <li class="nav-item">
           <a class="nav-link" href="">
-            <i class="fas fa-history"></i>
-            <span>My Saved Query</span></a
+            <i class="fas fa-copyright"></i>
+            <span>SohBot İsim Hakkı</span></a
           >
         </li>
 
         <!-- Nav Item - Delete Query -->
         <li class="nav-item">
           <a class="nav-link" href="">
-            <i class="far fa-trash-alt"></i>
-            <span>Delete Saved Query</span></a
+            <i class="fas fa-envelope"></i>
+            <span>İletişim</span></a
           >
         </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">Analysis</div>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-chart-pie"></i>
-            <span>Sentiment Analysis</span></a
-          >
-        </li>
-
-        <!-- Nav Item - Charts -->
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Word Cloud</span></a
-          >
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-fw fa-table"></i>
-            <span>Data Table</span></a
-          >
-        </li>
-
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block" />
-
-        <!-- Heading -->
-        <div class="sidebar-heading">Pages</div>
-
-        <!-- Nav Item - Register -->
-        <li class="nav-item">
-          <a class="nav-link" href="">
-            <i class="fas fa-registered"></i>
-            <span>Register</span></a
-          >
-        </li>
-
-        <!-- Nav Item - Logout -->
-        <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-            <i class="fas fa-sign-out-alt"></i>
-            <span>Logout</span></a
-          >
-        </li>
+       
        
         <!-- Sidebar Toggler (Sidebar) -->
         <div class="text-center d-none d-md-inline">
@@ -225,7 +175,8 @@
             <div class="copyright text-center my-auto">
               <span
                 >Copyright &copy; Fatih Behlul<br />
-                Thema: Start Bootsrap</span
+                Thema: Start Bootsrap<br/>
+                Chatbot Thema: Rasa </span
               >
             </div>
           </div>
@@ -244,7 +195,7 @@
     <!-- Logout Modal-->
     <div
       class="modal fade"
-      id="logoutModal"
+      id="aboutModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -340,14 +291,21 @@
     <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
 
     <!--JavaScript at end of body for optimized loading-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script type="text/javascript" src="static/js/materialize.min.js"></script>
+
+    <script src="{% static 'js/materialize.min.js' %}"></script>
 
     <!--Main Script -->
-    <script type="text/javascript" src="static/js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 
-    <!--Chart.js Script -->
-    <script type="text/javascript" src="static/js/chart.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="{% static 'js/Chart.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'js/dataTables.bootstrap4.min.js' %}"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="{% static 'js/chart-area-demo.js' %}"></script>
+    <script src="{% static 'js/chart-pie-demo.js' %}"></script>
+    <script src="{% static 'js/datatables-demo.js' %}"></script>  
 
    
   </body>
