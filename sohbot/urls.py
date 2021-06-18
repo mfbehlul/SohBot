@@ -13,7 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from QnADataSet.views import start_chatbot,start_chatting
+from QnADataSet.views import start_chatting
 from django.contrib import admin
 from django.urls import path
 from home.views import home_view
@@ -22,7 +22,6 @@ from home.views import home_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_view,name="home"),
-    path('deneme/',start_chatbot,name="deneme"),
     path('start-chat/',start_chatting,name="startchat"),
 
 ]
