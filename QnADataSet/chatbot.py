@@ -1,5 +1,4 @@
 from .models import QnADataSet, greetingsDataSet, dailyConversationDataSet
-import nltk
 import random
 import string
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -79,7 +78,7 @@ def get_stem(user_input):
     stemmer = TurkishStemmer()
 
     # user message is tokenized by word tokenizer
-    word_tokenize = nltk.word_tokenize(user_input)
+    word_tokenize = user_input.split()
     word_tokenize_stemmed = []
 
     for i in word_tokenize:

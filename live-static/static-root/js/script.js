@@ -154,7 +154,7 @@ function scrollToBottomOfResults() {
 //============== send the user message to SohBot server =============================================
 function send(message) {
     $.ajax({
-        url: "http://127.0.0.1:8000/start-chat/",
+        url: "https://sohbot.herokuapp.com/start-chat/",
         type: "POST",
         contentType: "application/json",
         data:JSON.stringify({ message: message}),
