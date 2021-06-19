@@ -94,17 +94,17 @@
           >
         </li>
 
-        <!-- Nav Item - Saved Query -->
+        <!-- Nav Item - İsim Hakkı -->
         <li class="nav-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#saveModal">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#copyrightModal">
             <i class="fas fa-copyright"></i>
             <span>SohBot İsim Hakkı</span></a
           >
         </li>
 
-        <!-- Nav Item - Delete Query -->
+        <!-- Nav Item - İletişim -->
         <li class="nav-item">
-          <a class="nav-link" href="">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#contactModal">
             <i class="fas fa-envelope"></i>
             <span>İletişim</span></a
           >
@@ -135,29 +135,7 @@
               <i class="fa fa-bars"></i>
             </button>
 
-            <!-- Topbar Navbar -->
-            <ul class="navbar-nav ml-auto">
-              <div class="topbar-divider d-none d-sm-block"></div>
-
-              <!-- Nav Item - User Information -->
-              <li class="nav-item dropdown no-arrow">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  id="userDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                    >{{request.user}}</span
-                  >
-                  <i class="fas fa-users"></i>
-                </a>
-            
-              </li>
-            </ul>
+        
           </nav>
           <!-- End of Topbar -->
 
@@ -191,7 +169,7 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+    <!-- About Modal-->
     <div
       class="modal fade"
       id="aboutModal"
@@ -203,7 +181,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">SohBot Hakkında</h5>
             <button
               class="close"
               type="button"
@@ -214,7 +192,7 @@
             </button>
           </div>
           <div class="modal-body">
-            Select "Logout" below if you are ready to end your current session.
+            SohBot, Boğaziçi Üniversitesi Yazılım Mühendisliği öğrencilerinin sorularına cevap bulabilmeleri için bitirme projesi olarak M.Fatih Behlül tarafından proje danışmanı Doktor Öğretim Üyesi F.Başak Aydemir'in destekleriyle oluşturulmuştur.
           </div>
           <div class="modal-footer">
             <button
@@ -222,18 +200,17 @@
               type="button"
               data-dismiss="modal"
             >
-              Cancel
+              SohBot'a geri dön!
             </button>
-            <a class="btn btn-primary" href="">Logout</a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Save Modal-->
+    <!-- İsim Hakkı Modal-->
     <div
       class="modal fade"
-      id="saveModal"
+      id="copyrightModal"
       tabindex="-1"
       role="dialog"
       aria-labelledby="exampleModalLabel"
@@ -242,7 +219,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Ready to Save?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">SohBot İsim Hakkı</h5>
             <button
               class="close"
               type="button"
@@ -253,8 +230,7 @@
             </button>
           </div>
           <div class="modal-body">
-            If you want to save your Query to the database, please hit to save
-            button below.
+            SohBot terimi, ilk olarak Boğaziçi Üniversitesi Bilgisayar Mühendisliği Bölümü öğretim üyesi Profesör Doktor Cem Say tarafından önerilmiştir. Bu projede kullanılmak için kendisinden gerekli izinler alınmıştır.
           </div>
           <div class="modal-footer">
             <button
@@ -262,18 +238,48 @@
               type="button"
               data-dismiss="modal"
             >
-              Cancel
+              SohBot'a geri dön!
             </button>
-            <form>
-              <button
-                type="submit"
-                class="btn btn-primary"
-                value="clicked"
-                name="savebutton"
-              >
-                Save the Query
-              </button>
-            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  Contact Modal-->
+    <div
+      class="modal fade"
+      id="contactModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">İletişim</h5>
+            <button
+              class="close"
+              type="button"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            SohBot ile ilgili tüm soru / önerileriniz ve SohBot'un kaynak koduna ulaşmak için aşağıdaki linkleri kullanabilirsiniz.
+            mfbehlul@gmail.com
+          </br> github.com/mfbehlul
+          </div>
+          <div class="modal-footer">
+            <button
+              class="btn btn-secondary"
+              type="button"
+              data-dismiss="modal"
+            >
+            SohBot'a geri dön!
+            </button>
           </div>
         </div>
       </div>

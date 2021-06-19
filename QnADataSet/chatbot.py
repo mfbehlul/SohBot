@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import ast
 from TurkishStemmer import TurkishStemmer
+import numpy as np
 
 
 def greetings(user_input):
@@ -56,20 +57,20 @@ def qna_dataset(user_input):
 
     TfidfVec = TfidfVectorizer()
     tfidf = TfidfVec.fit_transform(db_sentence_list)
-    vals = cosine_similarity(tfidf[-1], tfidf)
-    idx = vals.argsort()[0][-2]
-    flat = vals.flatten()
-    flat.sort()
-    req_tfidf = flat[-2]
+    similarity_score = cosine_similarity(tfidf[-1], tfidf)
+    index_of_array = similarity_score.argsort()[0][-2]
+    flattened_list = similarity_score.flatten()
+    flattened_list.sort()
+    final_tfidf_score = flattened_list[-2]
 
-    if(req_tfidf == 0):
+    if(final_tfidf_score == 0):
         bot_response = None
     else:
-        if (idx % 2 == 0):
+        if (index_of_array % 2 == 0):
             # if user input is matched with question, bot response get the answer by increasing index
-            bot_response = bot_response+db_sentence_list[idx+1]
+            bot_response = bot_response+db_sentence_list[index_of_array+1]
         else:
-            bot_response = bot_response+db_sentence_list[idx]
+            bot_response = bot_response+db_sentence_list[index_of_array]
 
     return bot_response
 
